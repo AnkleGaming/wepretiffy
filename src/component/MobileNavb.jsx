@@ -6,31 +6,34 @@ import UserProfile from "./ui/userprofile";
 import skin from "../assets/skinanalyze.jpg";
 import Colors from "../core/constant";
 import { MdNewReleases } from "react-icons/md";
-import { FaBeer } from "react-icons/fa";
+import { FaBeer, FaProductHunt } from "react-icons/fa";
 import { MdAlarm } from "react-icons/md";
+import skinanalyze from "../assets/skinanalyze.jpg";
+import SkninAnalyzer from "./ui/skinanalyzer";
+import { icons } from "lucide-react";
 
 const navItems = [
   {
-    label: "HM",
+    label: "WP",
     icon: (
       <div
         className={`text-[10px] w-7 h-7 bg-${Colors.primaryMain} text-white flex items-center justify-center rounded-full font-bold text-lg transition-all duration-300 group-hover:scale-110`}
       >
-        HM
+        WP
       </div>
     ),
     component: <Home />,
     notification: false,
   },
   {
-    label: "New",
-    icon: <MdNewReleases className={`w-7 h-7`} />,
-    component: <ProductScreen />,
+    label: "Skin Analyze",
+    icon: <img src={skinanalyze} alt="Skin Analyze" className={`w-7 h-7`} />,
+    component: <SkninAnalyzer />,
     notification: false,
   },
   {
-    label: "Used",
-    icon: <MdAlarm className={`w-7 h-7`} />,
+    label: "Products",
+    icon: <FaProductHunt className={`w-7 h-7`} />,
     component: <UsedProduct />,
     notification: false,
   },
