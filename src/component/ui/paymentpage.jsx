@@ -232,13 +232,14 @@ const PaymentPage = () => {
         try {
           await UpdateOrder({
             OrderID: orderId,
-            Price: finalPayable,
+            Price: "",
             Quantity: getTotalQuantity(),
             Address: selectedAddress.FullAddress,
             Slot: isProduct ? "N/A" : slotString,
             Status: "Placed",
             PaymentMethod: "Wallet & Coupon",
             PaymentID: "full_wallet_coupon",
+            FinalPrice: finalPayable,
           });
 
           // DEDUCT WALLET — USING FRESH BALANCE
@@ -316,6 +317,7 @@ const PaymentPage = () => {
               Status: "Placed",
               PaymentMethod: walletUsed > 0 ? "Online + Wallet" : "Online",
               PaymentID: response.razorpay_payment_id,
+              FinalPrice: finalPayable,
             });
 
             // DEDUCT WALLET AFTER SUCCESSFUL PAYMENT — USING FRESH BALANCE
