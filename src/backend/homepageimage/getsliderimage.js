@@ -17,7 +17,7 @@ const GetSliderImage = async (type) => {
 
   try {
     const response = await axios.post(
-      "https://api.weprettify.com/APIs/APIs.asmx/ShowSlider",
+      "https://api.weprettify.com/APIs/APIs.asmx/ShowSliders",
       formData,
       {
         headers: {
