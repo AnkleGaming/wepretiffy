@@ -194,7 +194,7 @@ const Navigation = () => {
               {[
                 { to: "/", label: "Home" },
                 {
-                  to: "https://vendor.hukmee.in/  ",
+                  to: "https://vendor.weprettify.com/",
                   label: "Career",
                   external: true,
                 },
