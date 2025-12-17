@@ -1,19 +1,17 @@
 import axios from "axios";
 
 class GetColorTabModel {
-  constructor(id, Colors, label, colorId) {
+  constructor(id, Tabname, SubCatid) {
     this.id = id;
-    this.Colors = Colors;
-    this.label = label;
-    this.colorId = colorId;
+    this.Tabname = Tabname;
+    this.SubCatid = SubCatid;
   }
 
   static fromJson(json) {
     return new GetColorTabModel(
       json.id || 0,
-      json.Colors || "",
-      json.label || 0,
-      json.colorid || ""
+      json.Tabname || "",
+      json.SubCatid || ""
     );
   }
 }
@@ -21,11 +19,12 @@ class GetColorTabModel {
 const GetServicesTab = async (Id) => {
   const formData = new URLSearchParams();
   formData.append("token", "SWNCMPMSREMXAMCKALVAALI");
-  formData.append("colorid", Id);
+  formData.append("id", Id);
+  formData.append("type", "");
 
   try {
     const response = await axios.post(
-      "https://api.weprettify.com/APIs/APIs.asmx/ShowColors",
+      "https://api.weprettify.com/APIs/APIs.asmx/GetTabs",
       formData,
       {
         headers: {
